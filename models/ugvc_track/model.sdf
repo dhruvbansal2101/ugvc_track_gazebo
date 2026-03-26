@@ -6,20 +6,24 @@
 
     <link name="track_link">
 
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>model://ugvc_track/meshes/ugvc_track.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
+      <!-- Visual mesh (your Blender track) -->
+<visual name="visual">
+  <geometry>
+    <mesh>
+      <uri>model://ugvc_track/meshes/ugvc_track.dae</uri>
+      <scale>0.01 0.01 0.01</scale>
+    </mesh>
+  </geometry>
+</visual>
 
+      <!-- Simple collision so Gazebo physics works -->
       <collision name="collision">
         <geometry>
-          <mesh>
-            <uri>model://ugvc_track/meshes/ugvc_track.dae</uri>
-          </mesh>
+          <box>
+            <size>200 200 1</size>
+          </box>
         </geometry>
+        <pose>0 0 -0.5 0 0 0</pose>
       </collision>
 
     </link>
